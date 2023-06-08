@@ -7,7 +7,7 @@ import pandas as pd
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
-from api.infer import infer_text
+from api.infer import summarise, translate_german_to_english
 
 app = FastAPI()
 
@@ -36,9 +36,13 @@ def get_current_username(
     return credentials.username
 
 
-@app.post("/nlp/infer_text")
+@app.post("/nlp/summarise")
 def infer_text_endpoint(text: str, username: Annotated[str, Depends(get_current_username)]):
-    return {"text": text, "prediction": infer_text(text)}
+    return {"text": text, "prediction": summarise(text)}
+
+@app.post("/nlp/de-to-en")
+def infer_text_endpoint(text: str, username: Annotated[str, Depends(get_current_username)]):
+    return {"text": text, "prediction": translate_german_to_english(text)}
 
 @app.get("/nlp/model_info")
 def model_info(username: Annotated[str, Depends(get_current_username)]):
