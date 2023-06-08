@@ -15,3 +15,5 @@ sacrebleu
 scikit-learn
 python-multipart
 ftfy
+openai
+python-dotenv

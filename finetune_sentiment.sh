@@ -6,7 +6,8 @@ python run_textcat.py \
   --max_seq_length 128 \
   --per_device_train_batch_size 64 \
   --learning_rate 2e-5 \
-  --num_train_epochs 3 \
+  --num_train_epochs 1 \
+  --max_train_samples 15000 \
   --max_eval_samples 1000 \
   --max_predict_samples 1000 \
   --output_dir finetuned-imdb-bert
