@@ -4,9 +4,12 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 current_dir = pathlib.Path(__file__).parent.parent.resolve()
 summarisation_dir = current_dir / "finetuned_summarisation"
+translation_dir = current_dir / "finetuned_de-en_translation"
+sentiment_dir = current_dir / "finetuned-imdb-bert"
 
 tokenizer = AutoTokenizer.from_pretrained(summarisation_dir)
 sum_model = AutoModelForSeq2SeqLM.from_pretrained(summarisation_dir)
+translation_model = AutoModelForSeq2SeqLM.from_pretrained(translation_dir)
 
 
 def summarise(text: str) -> str:
