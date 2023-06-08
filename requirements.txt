@@ -1,0 +1,17 @@
+fastapi
+transformers
+datasets
+torch
+torchvision
+torchaudio
+pandas
+jupyterlab
+evaluate
+nltk
+accelerate
+rouge_score
+sentencepiece
+sacrebleu
+scikit-learn
+python-multipart
+ftfy
